@@ -10,6 +10,7 @@
 
 @interface RentalProperty : NSObject
 
-@property 
+@property
+
 
 @end
