@@ -22,7 +22,11 @@
 {
     [super viewDidLoad];
     
-    
+    _rentalProperty = @[@[@"ul. Wiejska 13, Gdańsk", @"TownHouse", @420.0f],
+                        @[@"ul. Rogowa 74, Bydgoszcz", @"Unit", @365.0f],
+                        @[@"ul. Kwiatowa 17, Barycz", @"Unit", @275.9f],
+                        @[@"ul. Dobra 4, Gdańsk", @"Mansion", @1500.0f],
+                        @[@"ul. Nowa 19, Klifowo", @"Mansion", @2000.0f]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -53,7 +57,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 25;
+    return [_rentalProperty count];
     
 }
 
@@ -66,15 +70,13 @@
                              dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]
-                 initWithStyle:UITableViewCellStyleDefault
+                initWithStyle:UITableViewCellStyleSubtitle
                  reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [NSString
-                           stringWithFormat:@"Nieruchomości do wynajęcia %ld", (long)indexPath.row];
-    
+    cell.textLabel.text = [[_rentalProperty objectAtIndex:indexPath.row] objectAtIndex:0];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Nieruchomość za %@ zł tygodniowo", [[_rentalProperty objectAtIndex:indexPath.row] objectAtIndex:2]];
 
-    NSLog(@"Nieruchomości do wynajęcia %ld", (long)indexPath.row);
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -10,7 +10,4 @@
 
 @interface RootViewController : UITableViewController
 
-//@property NSDictionary *rentalProperty;
-//@property NSArray *
-
 @end

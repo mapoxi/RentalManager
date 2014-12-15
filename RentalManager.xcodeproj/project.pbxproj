@@ -34,7 +34,6 @@
 		2428276D1A3EFA49002E9B13 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		2428276F1A3EFB39002E9B13 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		242827711A3EFB43002E9B13 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
-		242827A51A3F1B6C002E9B13 /* RentalProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentalProperty.h; sourceTree = "<group>"; };
 		248918D71A3EF7380075B8CD /* RentalManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RentalManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		248918DB1A3EF7380075B8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		248918DC1A3EF7380075B8CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,7 +94,6 @@
 				242827711A3EFB43002E9B13 /* RootViewController.xib */,
 				248918E71A3EF7380075B8CD /* Images.xcassets */,
 				248918DA1A3EF7380075B8CD /* Supporting Files */,
-				242827A51A3F1B6C002E9B13 /* RentalProperty.h */,
 			);
 			path = RentalManager;
 			sourceTree = "<group>";
