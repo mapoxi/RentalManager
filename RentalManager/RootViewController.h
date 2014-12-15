@@ -8,9 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UITableViewController
+@interface RootViewController : UITableViewController {
+    
+}
 
-//@property NSDictionary *rentalProperty;
-//@property NSArray *
+typedef enum PropertyType {
+    Unit,
+    TownHouse,
+    Mansion
+} PropertyType;
+
+struct RentalProperty{
+    __unsafe_unretained NSString * address;
+    PropertyType type;
+    double weeklyRentalPrice;
+};
 
 @end

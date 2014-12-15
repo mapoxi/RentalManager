@@ -10,19 +10,19 @@
 
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))
 
-@interface RootViewController()
-
-@property NSArray *rentalProperty;
-
-@end
+struct RentalProperty properties[] = {
+    { @"ul. Wiejska 13, Gdańsk", TownHouse, 420.0f },
+    { @"ul. Rogowa 74, Bydgoszcz", Unit, 365.0f },
+    { @"ul. Kwiatowa 17, Barycz", Unit, 275.9f },
+    { @"ul. Dobra 4, Gdańsk", Mansion, 1500.0f },
+    { @"ul. Nowa 19, Klifowo", Mansion, 2000.0f }
+};
 
 @implementation RootViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -37,12 +37,12 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	[super viewWillDisappear:animated];
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-	[super viewDidDisappear:animated];
+    [super viewDidDisappear:animated];
 }
 
 // Określenie liczby sekcji w widoku tabeli.
@@ -53,37 +53,32 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 25;
-    
+    return ARRAY_SIZE(properties);
 }
 
 // Dostosowanie wyglądu komórki widoku tabeli.
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView
-                             dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]
-                 initWithStyle:UITableViewCellStyleDefault
-                 reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [NSString
-                           stringWithFormat:@"Nieruchomości do wynajęcia %ld", (long)indexPath.row];
+    cell.textLabel.text = properties[indexPath.row].address;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Nieruchomość za %0.2f zł tygodniowo", properties[indexPath.row].weeklyRentalPrice];
     
-
-    NSLog(@"Nieruchomości do wynajęcia %ld", (long)indexPath.row);
     return cell;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     /*
-    // Przekazanie wskazanego obiektu do nowego kontrolera widoku.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-	*/
+     // Przekazanie wskazanego obiektu do nowego kontrolera widoku.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     [detailViewController release];
+     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,7 +92,7 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-
+    
     // Zrzeczenie się własności wszelkich danych, które można odtworzyć w metodzie viewDidLoad lub na żądanie,
     // na przykład: self.myOutlet = nil;
 }
