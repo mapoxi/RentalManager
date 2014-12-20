@@ -74,7 +74,25 @@
                  reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [[_rentalProperty objectAtIndex:indexPath.row] objectAtIndex:0];
+    unsigned long indexOfComma = [[[_rentalProperty objectAtIndex:indexPath.row] objectAtIndex:0] rangeOfString:@","].location;
+    NSString *address = [[[_rentalProperty objectAtIndex:indexPath.row] objectAtIndex:0]
+                         substringToIndex:indexOfComma];
+    NSString *city = [[[_rentalProperty objectAtIndex:indexPath.row] objectAtIndex:0]
+                      substringFromIndex:indexOfComma + 2];
+    
+    cell.textLabel.text = address;
+
+    
+    
+    if ([city isEqual:@"Gdańsk"])
+        cell.imageView.image = [UIImage imageNamed:@"mountain.png"];
+    else if ([city isEqual:@"Bydgoszcz"])
+        cell.imageView.image = [UIImage imageNamed:@"sea.png"];
+    else
+        cell.imageView.image = [UIImage imageNamed:@"city.png"];
+
+    
+    cell.textLabel.text = address;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Nieruchomość za %@ zł tygodniowo", [[_rentalProperty objectAtIndex:indexPath.row] objectAtIndex:2]];
 
     return cell;
