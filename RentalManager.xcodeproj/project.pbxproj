@@ -11,6 +11,9 @@
 		2428276E1A3EFA49002E9B13 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2428276D1A3EFA49002E9B13 /* RootViewController.m */; };
 		242827701A3EFB39002E9B13 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2428276F1A3EFB39002E9B13 /* MainWindow.xib */; };
 		242827721A3EFB43002E9B13 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242827711A3EFB43002E9B13 /* RootViewController.xib */; };
+		24711C811A4632E10008BBF1 /* city.png in Resources */ = {isa = PBXBuildFile; fileRef = 24711C7E1A4632E10008BBF1 /* city.png */; };
+		24711C821A4632E10008BBF1 /* mountain.png in Resources */ = {isa = PBXBuildFile; fileRef = 24711C7F1A4632E10008BBF1 /* mountain.png */; };
+		24711C831A4632E10008BBF1 /* sea.png in Resources */ = {isa = PBXBuildFile; fileRef = 24711C801A4632E10008BBF1 /* sea.png */; };
 		248918DD1A3EF7380075B8CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 248918DC1A3EF7380075B8CD /* main.m */; };
 		248918E01A3EF7380075B8CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 248918DF1A3EF7380075B8CD /* AppDelegate.m */; };
 		248918E81A3EF7380075B8CD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 248918E71A3EF7380075B8CD /* Images.xcassets */; };
@@ -34,6 +37,9 @@
 		2428276D1A3EFA49002E9B13 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		2428276F1A3EFB39002E9B13 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		242827711A3EFB43002E9B13 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		24711C7E1A4632E10008BBF1 /* city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city.png; sourceTree = "<group>"; };
+		24711C7F1A4632E10008BBF1 /* mountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mountain.png; sourceTree = "<group>"; };
+		24711C801A4632E10008BBF1 /* sea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sea.png; sourceTree = "<group>"; };
 		248918D71A3EF7380075B8CD /* RentalManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RentalManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		248918DB1A3EF7380075B8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		248918DC1A3EF7380075B8CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,6 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				248918DB1A3EF7380075B8CD /* Info.plist */,
+				24711C7E1A4632E10008BBF1 /* city.png */,
+				24711C7F1A4632E10008BBF1 /* mountain.png */,
+				24711C801A4632E10008BBF1 /* sea.png */,
 				248918DC1A3EF7380075B8CD /* main.m */,
 			);
 			name = "Supporting Files";
@@ -204,7 +213,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24711C811A4632E10008BBF1 /* city.png in Resources */,
+				24711C821A4632E10008BBF1 /* mountain.png in Resources */,
 				242827701A3EFB39002E9B13 /* MainWindow.xib in Resources */,
+				24711C831A4632E10008BBF1 /* sea.png in Resources */,
 				242827721A3EFB43002E9B13 /* RootViewController.xib in Resources */,
 				248918E81A3EF7380075B8CD /* Images.xcassets in Resources */,
 			);

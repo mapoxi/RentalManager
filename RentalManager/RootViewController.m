@@ -57,20 +57,43 @@ struct RentalProperty properties[] = {
 }
 
 // Dostosowanie wyglądu komórki widoku tabeli.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView
+                             dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc]
+                 initWithStyle:UITableViewCellStyleSubtitle
+                 reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = properties[indexPath.row].address;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Nieruchomość za %0.2f zł tygodniowo", properties[indexPath.row].weeklyRentalPrice];
+    struct RentalProperty *details = &properties[indexPath.row];
     
+    unsigned long indexOfComma = [details->address rangeOfString:@","].location;
+    NSString *address = [details->address
+                         substringToIndex:indexOfComma];
+    NSString *city = [details->address
+                      substringFromIndex:indexOfComma + 2];
+    
+    cell.textLabel.text = address;
+    
+    if ([city isEqual:@"Gdańsk"])
+        cell.imageView.image = [UIImage imageNamed:@"mountain.png"];
+    else if ([city isEqual:@"Bydgoszcz"])
+        cell.imageView.image = [UIImage imageNamed:@"sea.png"];
+    else
+        cell.imageView.image = [UIImage imageNamed:@"city.png"];
+    
+    cell.detailTextLabel.text =
+    [NSString stringWithFormat:@"Nieruchomości za %0.2f zł tygodniowo",
+     details->weeklyRentalPrice]; 
     return cell;
 }
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
