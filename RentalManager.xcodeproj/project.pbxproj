@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2411937F1A472D1E0004401A /* CityMappings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2411937E1A472D1E0004401A /* CityMappings.plist */; };
 		241193861A473FE90004401A /* CTRentalProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 241193851A473FE90004401A /* CTRentalProperty.m */; };
-		2428276B1A3EF9C8002E9B13 /* RentalManagerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2428276A1A3EF9C8002E9B13 /* RentalManagerAppDelegate.m */; };
 		2428276E1A3EFA49002E9B13 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2428276D1A3EFA49002E9B13 /* RootViewController.m */; };
 		242827701A3EFB39002E9B13 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2428276F1A3EFB39002E9B13 /* MainWindow.xib */; };
 		242827721A3EFB43002E9B13 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242827711A3EFB43002E9B13 /* RootViewController.xib */; };
@@ -36,8 +35,6 @@
 		2411937E1A472D1E0004401A /* CityMappings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CityMappings.plist; sourceTree = "<group>"; };
 		241193841A473FE90004401A /* CTRentalProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTRentalProperty.h; sourceTree = "<group>"; };
 		241193851A473FE90004401A /* CTRentalProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTRentalProperty.m; sourceTree = "<group>"; };
-		242827691A3EF9C8002E9B13 /* RentalManagerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentalManagerAppDelegate.h; sourceTree = "<group>"; };
-		2428276A1A3EF9C8002E9B13 /* RentalManagerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RentalManagerAppDelegate.m; sourceTree = "<group>"; };
 		2428276C1A3EFA49002E9B13 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		2428276D1A3EFA49002E9B13 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		2428276F1A3EFB39002E9B13 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -95,8 +92,6 @@
 		248918D91A3EF7380075B8CD /* RentalManager */ = {
 			isa = PBXGroup;
 			children = (
-				242827691A3EF9C8002E9B13 /* RentalManagerAppDelegate.h */,
-				2428276A1A3EF9C8002E9B13 /* RentalManagerAppDelegate.m */,
 				248918DE1A3EF7380075B8CD /* AppDelegate.h */,
 				248918DF1A3EF7380075B8CD /* AppDelegate.m */,
 				241193841A473FE90004401A /* CTRentalProperty.h */,
@@ -247,7 +242,6 @@
 			files = (
 				241193861A473FE90004401A /* CTRentalProperty.m in Sources */,
 				248918E01A3EF7380075B8CD /* AppDelegate.m in Sources */,
-				2428276B1A3EF9C8002E9B13 /* RentalManagerAppDelegate.m in Sources */,
 				248918DD1A3EF7380075B8CD /* main.m in Sources */,
 				2428276E1A3EFA49002E9B13 /* RootViewController.m in Sources */,
 			);
