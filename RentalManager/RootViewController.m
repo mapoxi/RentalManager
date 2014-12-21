@@ -23,6 +23,8 @@ struct RentalProperty properties[] = {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"CityMappings" ofType:@"plist"];
+    cityMappings = [[NSDictionary alloc] initWithContentsOfFile:path];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -81,12 +83,8 @@ struct RentalProperty properties[] = {
     
     cell.textLabel.text = address;
     
-    if ([city isEqual:@"Gdańsk"])
-        cell.imageView.image = [UIImage imageNamed:@"mountain.png"];
-    else if ([city isEqual:@"Bydgoszcz"])
-        cell.imageView.image = [UIImage imageNamed:@"sea.png"];
-    else
-        cell.imageView.image = [UIImage imageNamed:@"city.png"];
+    NSString *imageName = [cityMappings objectForKey:city];
+    cell.imageView.image = [UIImage imageNamed:imageName];
     
     cell.detailTextLabel.text =
     [NSString stringWithFormat:@"Nieruchomości za %0.2f zł tygodniowo",

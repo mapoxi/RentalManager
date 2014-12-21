@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UITableViewController {
-    
+    NSDictionary *cityMappings;
 }
 
 typedef enum PropertyType {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2411937F1A472D1E0004401A /* CityMappings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2411937E1A472D1E0004401A /* CityMappings.plist */; };
 		2428276B1A3EF9C8002E9B13 /* RentalManagerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2428276A1A3EF9C8002E9B13 /* RentalManagerAppDelegate.m */; };
 		2428276E1A3EFA49002E9B13 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2428276D1A3EFA49002E9B13 /* RootViewController.m */; };
 		242827701A3EFB39002E9B13 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2428276F1A3EFB39002E9B13 /* MainWindow.xib */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2411937E1A472D1E0004401A /* CityMappings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CityMappings.plist; sourceTree = "<group>"; };
 		242827691A3EF9C8002E9B13 /* RentalManagerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RentalManagerAppDelegate.h; sourceTree = "<group>"; };
 		2428276A1A3EF9C8002E9B13 /* RentalManagerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RentalManagerAppDelegate.m; sourceTree = "<group>"; };
 		2428276C1A3EFA49002E9B13 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				248918DF1A3EF7380075B8CD /* AppDelegate.m */,
 				2428276C1A3EFA49002E9B13 /* RootViewController.h */,
 				2428276D1A3EFA49002E9B13 /* RootViewController.m */,
+				2411937E1A472D1E0004401A /* CityMappings.plist */,
 				2428276F1A3EFB39002E9B13 /* MainWindow.xib */,
 				242827711A3EFB43002E9B13 /* RootViewController.xib */,
 				248918E71A3EF7380075B8CD /* Images.xcassets */,
@@ -217,6 +220,7 @@
 				24711C821A4632E10008BBF1 /* mountain.png in Resources */,
 				242827701A3EFB39002E9B13 /* MainWindow.xib in Resources */,
 				24711C831A4632E10008BBF1 /* sea.png in Resources */,
+				2411937F1A472D1E0004401A /* CityMappings.plist in Resources */,
 				242827721A3EFB43002E9B13 /* RootViewController.xib in Resources */,
 				248918E81A3EF7380075B8CD /* Images.xcassets in Resources */,
 			);
