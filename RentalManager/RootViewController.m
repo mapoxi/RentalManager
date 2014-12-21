@@ -1,85 +1,56 @@
-//
-//  RootViewController.m
-//  RentalManager
-//
-//  Created by Amos Bannister on 10/05/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
 #import "RootViewController.h"
-
-#define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))
-
-struct RentalProperty properties[] = {
-    { @"ul. Wiejska 13, Gdańsk", TownHouse, 420.0f },
-    { @"ul. Rogowa 74, Bydgoszcz", Unit, 365.0f },
-    { @"ul. Kwiatowa 17, Barycz", Unit, 275.9f },
-    { @"ul. Dobra 4, Gdańsk", Mansion, 1500.0f },
-    { @"ul. Nowa 19, Klifowo", Mansion, 2000.0f }
-};
+#import "CTRentalProperty.h"
 
 @implementation RootViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"CityMappings" ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"CityMappings"
+                                                     ofType:@"plist"];
     cityMappings = [[NSDictionary alloc] initWithContentsOfFile:path];
+    properties =
+    [[NSArray alloc] initWithObjects:
+     [CTRentalProperty rentalPropertyOfType:TownHouse
+                                 rentingFor:420.0f
+                                  atAddress:@"ul. Wiejska 13, Gdańsk"],
+     [CTRentalProperty rentalPropertyOfType:Unit
+                                 rentingFor:365.0f
+                                  atAddress:@"ul. Rogowa 74, Bydgoszcz"],
+     [CTRentalProperty rentalPropertyOfType:Unit
+                                 rentingFor:275.9f
+                                  atAddress:@"ul. Kwiatowa 17, Barycz"],
+     [CTRentalProperty rentalPropertyOfType:Mansion
+                                 rentingFor:1500.0f
+                                  atAddress:@"ul. Dobra 4, Gdańsk"],
+     [CTRentalProperty rentalPropertyOfType:Mansion
+                                 rentingFor:2000.0f
+                                  atAddress:@"ul. Nowa 19, Klifowo"],
+     nil];
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)sectio
 {
-    [super viewWillAppear:animated];
+    return [properties count];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-}
-
-// Określenie liczby sekcji w widoku tabeli.
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return ARRAY_SIZE(properties);
-}
-
-// Dostosowanie wyglądu komórki widoku tabeli.
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *cellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView
-                             dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]
-                 initWithStyle:UITableViewCellStyleSubtitle
-                 reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                       reuseIdentifier:cellIdentifier];
     }
     
-    struct RentalProperty *details = &properties[indexPath.row];
+    CTRentalProperty *property = [properties objectAtIndex:indexPath.row];
     
-    unsigned long indexOfComma = [details->address rangeOfString:@","].location;
-    NSString *address = [details->address
-                         substringToIndex:indexOfComma];
-    NSString *city = [details->address
-                      substringFromIndex:indexOfComma + 2];
+    unsigned long indexOfComma = [property.address rangeOfString:@","].location;
+    NSString *address = [property.address substringToIndex:indexOfComma];
+    NSString *city = [property.address substringFromIndex:indexOfComma + 2];
     
     cell.textLabel.text = address;
     
@@ -87,35 +58,9 @@ struct RentalProperty properties[] = {
     cell.imageView.image = [UIImage imageNamed:imageName];
     
     cell.detailTextLabel.text =
-    [NSString stringWithFormat:@"Nieruchomości za %0.2f zł tygodniowo",
-     details->weeklyRentalPrice]; 
+    [NSString stringWithFormat:@"Nieruchomości do wynajęcia za %0.2f zł tygodniowo",
+     property.rentalPrice];
     return cell;
-}
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    /*
-     // Przekazanie wskazanego obiektu do nowego kontrolera widoku.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Usunięcie widoków, które nie posiadają widoku nadrzędnego.
-    [super didReceiveMemoryWarning];
-    
-    // Zrzeczenie się własności wszelkich buforowanych danych, obrazów itd., które nie są obecnie używane.
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    
-    // Zrzeczenie się własności wszelkich danych, które można odtworzyć w metodzie viewDidLoad lub na żądanie,
-    // na przykład: self.myOutlet = nil;
 }
 
 @end

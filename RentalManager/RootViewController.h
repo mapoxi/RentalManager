@@ -10,18 +10,7 @@
 
 @interface RootViewController : UITableViewController {
     NSDictionary *cityMappings;
+    NSArray *properties;
 }
-
-typedef enum PropertyType {
-    Unit,
-    TownHouse,
-    Mansion
-} PropertyType;
-
-struct RentalProperty{
-    __unsafe_unretained NSString * address;
-    PropertyType type;
-    double weeklyRentalPrice;
-};
 
 @end
