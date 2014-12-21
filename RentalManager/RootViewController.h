@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UITableViewController
-
+@interface RootViewController : UITableViewController{
+    NSDictionary *cityMappings;
+}
 @end
