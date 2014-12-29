@@ -19,6 +19,9 @@
 		248918E01A3EF7380075B8CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 248918DF1A3EF7380075B8CD /* AppDelegate.m */; };
 		248918E81A3EF7380075B8CD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 248918E71A3EF7380075B8CD /* Images.xcassets */; };
 		248918F71A3EF7390075B8CD /* RentalManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 248918F61A3EF7390075B8CD /* RentalManagerTests.m */; };
+		24E4EC981A5202E100E6927D /* CTLease.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E4EC971A5202E100E6927D /* CTLease.m */; };
+		24E4EC9B1A52079A00E6927D /* CTPeriodicLease.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E4EC9A1A52079A00E6927D /* CTPeriodicLease.m */; };
+		24E4EC9E1A520A0900E6927D /* CTFixedLease.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E4EC9D1A520A0900E6927D /* CTFixedLease.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		248918F01A3EF7390075B8CD /* RentalManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RentalManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		248918F51A3EF7390075B8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		248918F61A3EF7390075B8CD /* RentalManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RentalManagerTests.m; sourceTree = "<group>"; };
+		24E4EC961A5202E100E6927D /* CTLease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTLease.h; sourceTree = "<group>"; };
+		24E4EC971A5202E100E6927D /* CTLease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTLease.m; sourceTree = "<group>"; };
+		24E4EC991A52079A00E6927D /* CTPeriodicLease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPeriodicLease.h; sourceTree = "<group>"; };
+		24E4EC9A1A52079A00E6927D /* CTPeriodicLease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPeriodicLease.m; sourceTree = "<group>"; };
+		24E4EC9C1A520A0900E6927D /* CTFixedLease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFixedLease.h; sourceTree = "<group>"; };
+		24E4EC9D1A520A0900E6927D /* CTFixedLease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFixedLease.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +105,12 @@
 				248918DF1A3EF7380075B8CD /* AppDelegate.m */,
 				241193841A473FE90004401A /* CTRentalProperty.h */,
 				241193851A473FE90004401A /* CTRentalProperty.m */,
+				24E4EC961A5202E100E6927D /* CTLease.h */,
+				24E4EC971A5202E100E6927D /* CTLease.m */,
+				24E4EC9C1A520A0900E6927D /* CTFixedLease.h */,
+				24E4EC9D1A520A0900E6927D /* CTFixedLease.m */,
+				24E4EC991A52079A00E6927D /* CTPeriodicLease.h */,
+				24E4EC9A1A52079A00E6927D /* CTPeriodicLease.m */,
 				2428276C1A3EFA49002E9B13 /* RootViewController.h */,
 				2428276D1A3EFA49002E9B13 /* RootViewController.m */,
 				2411937E1A472D1E0004401A /* CityMappings.plist */,
@@ -242,7 +257,10 @@
 			files = (
 				241193861A473FE90004401A /* CTRentalProperty.m in Sources */,
 				248918E01A3EF7380075B8CD /* AppDelegate.m in Sources */,
+				24E4EC9E1A520A0900E6927D /* CTFixedLease.m in Sources */,
+				24E4EC981A5202E100E6927D /* CTLease.m in Sources */,
 				248918DD1A3EF7380075B8CD /* main.m in Sources */,
+				24E4EC9B1A52079A00E6927D /* CTPeriodicLease.m in Sources */,
 				2428276E1A3EFA49002E9B13 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
