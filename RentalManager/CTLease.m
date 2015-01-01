@@ -14,7 +14,7 @@
                             forWeeks:(NSInteger)numberOfWeeks
 {
     CTLease *lease = [CTFixedLease fixedTermLeaseWithPrice:totalRental
-                                                  forWeeks:numberOfWeeks];
+                                                  forWeeks:(int)numberOfWeeks];
     return lease;
 }
 
