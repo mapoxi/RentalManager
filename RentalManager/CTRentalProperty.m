@@ -39,6 +39,27 @@
 - (void) decreaseRentalByPercent:(float)percent withMinimum:(float)min {
     rentalPrice = rentalPrice * (100 - percent) / 100;
     rentalPrice = fmax(rentalPrice, min);
+    
 }
 
+/*void aSimpleDynamicMethodIMP(id self, SEL _cmd)
+{
+    NSLog(@"Wywołałeś metodę o nazwie %@ ", NSStringFromSelector(_cmd));
+}
+
++ (BOOL)resolveInstanceMethod:(SEL)sel
+{
+    if (sel == @selector(aSimpleDynamicMethod)){
+        NSLog(@"Dodaję metodę o nazwie %@ do klasy %@",
+              NSStringFromSelector(sel),
+              NSStringFromClass([self class]));
+        class_addMethod([self class],
+                        sel,
+                        (IMP)aSimpleDynamicMethodIMP,
+                        "v@: ");
+        return YES;
+    }
+    return [super resolveInstanceMethod:sel];
+    }
+*/
 @end
