@@ -27,6 +27,7 @@
                                  rentingFor:2000.0f
                                   atAddress:@"ul. Nowa 19, Klifowo"],
      nil];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
